@@ -1,0 +1,309 @@
+### Criar Usuário
+POST http://localhost:8080/usuarios
+Content-Type: application/json
+Authorization: Basic Z2VyYWJvbDpHZXJsYWRvMTA=
+
+{
+  "nome": "Geraldo",
+  "email": "valencia@email.com",
+  "senha": "123456",
+  "perfil": "ALUNO"
+}
+
+### Criar Usuário2
+POST http://localhost:8080/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Gabriel Bortoleto",
+  "email": "bortoleto@f1.com",
+  "senha": "123456",
+  "perfil": "ALUNO"
+}
+
+### Criar Usuário3
+POST http://localhost:8080/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Fernando Alonso",
+  "email": "alonso@f1.com",
+  "senha": "123456",
+  "perfil": "SUPERVISOR"
+}
+
+### Listar Usuários
+GET http://localhost:8080/usuarios
+
+### Obter Usuário por ID
+GET http://localhost:8080/usuarios/2
+
+### Atualizar Usuário
+PUT http://localhost:8080/usuarios/2
+Content-Type: application/json
+
+{
+  "nome": "Vettel Atualizado",
+  "email": "vettel.atualizado@email.com",
+  "senha": "novaSenha",
+  "perfil": "PRECEPTOR"
+}
+
+### Deletar Usuário
+DELETE http://localhost:8080/usuarios/4
+
+### ----------------------------------------------------
+
+### Criar Semestre Letivo
+POST http://localhost:8080/semestre-letivo
+Content-Type: application/json
+
+{
+  "descricao": "Semestre 2025.1",
+  "dataInicio": "2025-02-01",
+  "dataFim": "2025-07-31",
+  "rotulo": "2025.1",
+  "encerrado": false
+}
+
+### Criar Semestre Letivo 2
+POST http://localhost:8080/semestre-letivo
+Content-Type: application/json
+
+{
+  "descricao": "Semestre 2025.2",
+  "dataInicio": "2025-09-01",
+  "dataFim": "2026-01-31",
+  "rotulo": "2025.2",
+  "encerrado": false
+}
+
+### Listar Semestres Letivos
+GET http://localhost:8080/semestre-letivo
+
+### Obter Semestre Letivo por ID
+GET http://localhost:8080/semestre-letivo/2
+
+### Atualizar Semestre Letivo
+PUT http://localhost:8080/semestre-letivo/2
+Content-Type: application/json
+
+{
+  "descricao": "Semestre 2025.2",
+  "dataInicio": "2025-08-01",
+  "dataFim": "2025-12-31",
+  "rotulo": "2025.2",
+  "encerrado": false
+}
+
+### Deletar Semestre Letivo
+DELETE http://localhost:8080/semestre-letivo/3
+
+
+### ------------------------------------
+
+
+### Criar Local Parceiro
+POST http://localhost:8080/locais
+Content-Type: application/json
+
+{
+  "nome": "Hospital Regional",
+  "sigla": "HR",
+  "enderecoCompleto": "Rua Central, 123",
+  "cidade": "Cidade Exemplo",
+  "cep": "12345-678",
+  "latitude": -23.55052,
+  "longitude": -46.633308
+}
+
+### Criar Local Parceiro 2
+POST http://localhost:8080/locais
+Content-Type: application/json
+
+{
+  "nome": "Hospital de Itabaiana",
+  "sigla": "HR",
+  "enderecoCompleto": "Rua Prefeito Valenciano, 123",
+  "cidade": "ITABAIANA-PB",
+  "cep": "44345-678",
+  "latitude": -28.75052,
+  "longitude": -66.933308
+}
+
+### Listar Locais Parceiros
+GET http://localhost:8080/locais
+
+### Obter Local Parceiro por ID
+GET http://localhost:8080/locais/2
+
+### Atualizar Local Parceiro
+PUT http://localhost:8080/locais/3
+Content-Type: application/json
+
+{
+  "nome": "Hospital Regional Atualizado",
+  "sigla": "HR",
+  "enderecoCompleto": "Rua Nova, 456",
+  "cidade": "Nova Cidade",
+  "cep": "98765-432",
+  "latitude": -23.55111,
+  "longitude": -46.632222
+}
+
+### Deletar Local Parceiro
+DELETE http://localhost:8080/locais/4
+
+
+### -------------------------------------------
+
+### Criar Especialidade
+POST http://localhost:8080/especialidades
+Content-Type: application/json
+
+{
+  "nome": "Cardiologia"
+}
+
+### Criar Especialidade 2
+POST http://localhost:8080/especialidades
+Content-Type: application/json
+
+{
+  "nome": "Neurologia"
+}
+
+### Criar Especialidade 3
+POST http://localhost:8080/especialidades
+Content-Type: application/json
+
+{
+  "nome": "Pediatria"
+}
+
+
+### Listar Especialidades
+GET http://localhost:8080/especialidades
+
+### Obter Especialidade por ID
+GET http://localhost:8080/especialidades/3
+
+### Atualizar Especialidade
+PUT http://localhost:8080/especialidades/3
+Content-Type: application/json
+
+{
+  "nome": "Oncologia"
+}
+
+### Deletar Especialidade
+DELETE http://localhost:8080/especialidades/4
+
+
+### -------------------------------------------
+
+### Criar Rodízio
+POST http://localhost:8080/rodizios
+Content-Type: application/json
+
+{
+  "localParceiro": { "id": 2 },
+  "especialidade": { "id": 2 },
+  "preceptor": { "id": 2 },
+  "dataInicio": "2025-10-01T08:00:00",
+  "dataFim": "2025-10-31T17:00:00",
+  "turno": "MANHA",
+  "vagas": 10
+}
+
+### Listar Rodízios
+GET http://localhost:8080/rodizios
+
+### Obter Rodízio por ID
+GET http://localhost:8080/rodizios/6
+
+### Atualizar Rodízio
+PUT http://localhost:8080/rodizios/6
+Content-Type: application/json
+
+{
+  "localParceiro": { "id": 1 },
+  "especialidade": { "id": 1 },
+  "preceptor": { "id": 3 },
+  "dataInicio": "2025-11-01T08:00:00",
+  "dataFim": "2025-11-30T17:00:00",
+  "turno": "NOITE",
+  "vagas": 8
+}
+
+### Deletar Rodízio
+DELETE http://localhost:8080/rodizios/7
+
+
+### -------------------
+
+### Criar RodízioAluno
+POST http://localhost:8080/rodizio-alunos
+Content-Type: application/json
+
+{
+  "rodizio": { "id": 1 },
+  "aluno": { "id":3 },
+  "status": "ATIVO"
+}
+
+### Listar RodízioAlunos
+GET http://localhost:8080/rodizio-alunos
+
+### Obter RodízioAluno por ID
+GET http://localhost:8080/rodizio-alunos/{{id}}
+
+### Atualizar RodízioAluno
+PUT http://localhost:8080/rodizio-alunos/{{id}}
+Content-Type: application/json
+
+{
+  "rodizio": { "id": 1 },
+  "aluno": { "id": 5 },
+  "status": "CONCLUIDO"
+}
+
+### Deletar RodízioAluno
+DELETE http://localhost:8080/rodizio-alunos/{{id}}
+
+### -----
+
+### Criar Checkin
+POST http://localhost:8080/checkins
+Content-Type: application/json
+
+{
+  "aluno": { "id": 1 },
+  "rodizio": { "id": 1 },
+  "dataHoraCheckin": "2025-10-05T08:15:00",
+  "dataHoraCheckout": "2025-10-05T12:15:00",
+  "presente": true,
+  "valido": true
+}
+
+### Listar Checkins
+GET http://localhost:8080/checkins
+
+### Obter Checkin por ID
+GET http://localhost:8080/checkins/{{id}}
+
+### Atualizar Checkin
+PUT http://localhost:8080/checkins/{{id}}
+Content-Type: application/json
+
+{
+  "aluno": { "id": 5 },
+  "rodizio": { "id": 1 },
+  "dataHoraCheckin": "2025-10-05T08:30:00",
+  "dataHoraCheckout": "2025-10-05T12:30:00",
+  "presente": true,
+  "valido": true
+}
+
+### Deletar Checkin
+DELETE http://localhost:8080/checkins/{{id}}
